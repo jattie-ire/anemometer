@@ -1,1 +1,10 @@
-/etc/systemd/system/weather_logger.service
+[Unit]
+Description=PGEventMonitor
+After=multi-user.target
+[Service]
+Type=simple
+Restart=on-failure
+#WatchdogSec=360
+ExecStart=/bin/python3 /home/jattie/gpio_interrupt.py
+[Install]
+WantedBy=multi-user.target
