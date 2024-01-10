@@ -1,0 +1,6 @@
+logger:
+  level: DEBUG          # INFO or DEBUG
+  filepath: /home/jattie/gpio_interrupt.log # the full path to the log file
+  filemode: w           # a or w, a to append, w to overwrite
+  format: "%(asctime)s\t%(levelname)s\t%(funcName)-28s - %(message)s" # logger string format - see logger documentation
+  handler: both         # file, stream or both
