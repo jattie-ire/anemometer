@@ -71,7 +71,7 @@ def calculate_wind_speed(channel):
     if not exists(f'{cwd}/log/{dts}.csv'):
       with open(f'{cwd}/log/{dts}.csv', 'a') as fp:
         fp.write('datetime,seconds_per_rpm,radial_speed,rpm,wind_speed_ms,wind_speed_kmh,knots\n')
-    if wind_speed < 100:
+    if wind_speed < 15: # a debounce issue occured at slow speeds, 
       marker=''
       with open(f'{cwd}/log/{dts}.csv', 'a') as fp:
         fp.write(f'{datetime.now()},{t},{radial_speed},{rpm},{wind_speed},{wind_speed*3.6},{knots}\n')
