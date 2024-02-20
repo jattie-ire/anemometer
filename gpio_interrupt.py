@@ -65,7 +65,8 @@ def calculate_wind_speed(channel):
     rpm=60/t
     #wind speed (m/s) = (π * cup diameter * rpm) / (60 * cup center distance)
     radial_speed = 2*pi*0.2*(rpm/60)
-    wind_speed = (pi * 0.08 * rpm) / (60 * 0.160)
+    #wind_speed = (pi * 0.08 * rpm) / (60 * 0.160)
+    wind_speed = (pi * 0.08 * rpm) / (60 * 0.100)
     knots=wind_speed * 1.94384
     dts=datetime.now().date().strftime('%y%m%d')
     if not exists(f'{cwd}/log/{dts}.csv'):
